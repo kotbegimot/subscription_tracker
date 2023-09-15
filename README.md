@@ -1,7 +1,11 @@
 # Subscription Tracker Backend
 ### Overview
+This application is a stateless subscription service with ability to store data in a in-memory DB which allows to
+create, get and delete subscription objects.
+
 This backend service registers and stores information about newsletter subscribers via API endpoints.
 It accepts information via body of JSON and returns response in the same format. For detailed specification see below.
+This service implemented following the MVC pattern and has a controller, service and data persistence layers.
 
 Open API documentation can be viewed via [Swagger UI](http://localhost:8080/swagger-ui/index.html)
 after application start.
