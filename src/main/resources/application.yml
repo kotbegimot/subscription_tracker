@@ -1,0 +1,32 @@
+# general
+spring:
+  application:
+    name: subscription_tracker
+  profiles:
+    active: "dev"
+  jpa:
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+server:
+  port: 8080
+  error:
+    include-exception: true
+    include-stacktrace: always
+# logging
+# OFF << FATAL << ERROR << WARN << INFO << DEBUG << TRACE << ALL
+logging:
+  level.com.example.demo: "DEBUG"
+validation:
+  dateFormat: "dd.MM.yyyy"
+  exceptionDateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
+  dateFormatList:
+    - "dd.MM.yyyy"
+    - "yyyy-MM-dd"
+    - "dd-MM-yyyy"
+  emailRegex: ^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$
+  errorInvalidDate: "Invalid date: %s, date format should be: %s"
+  errorInvalidEmail:  "Invalid subscription email: %s"
+  errorDateIsAfterCurrentDate: "Invalid date: %s, the date is after the current date"
+  errorBeforeIsMoreThanAfterDate: "Before date: %s is after than after date: %s"
