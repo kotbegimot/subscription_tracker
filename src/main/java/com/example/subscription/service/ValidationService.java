@@ -1,6 +1,7 @@
 package com.example.subscription.service;
 
 import com.example.subscription.model.DateSortCriteria;
+import com.example.subscription.model.StringSortCriteria;
 import com.example.subscription.model.SubscriptionModel;
 import com.example.subscription.model.exceptions.InvalidRequestException;
 import com.example.subscription.util.GeneralValidationUtil;
@@ -45,6 +46,18 @@ public class ValidationService {
         }
         if (beforeDate != null && afterDate != null) {
             compareDates(beforeDate, afterDate);
+        }
+        if (!errors.isEmpty())
+            throw new InvalidRequestException(errors);
+    }
+
+    public void validateFilterStrings(StringSortCriteria stringSortCriteria) throws InvalidRequestException {
+        errors.clear();
+        if (stringSortCriteria.getStartsWith() != null && stringSortCriteria.getStartsWith().isEmpty()) {
+            errors.add(properties.getErrorInvalidFilterString().formatted("startsWith"));
+        }
+        if (stringSortCriteria.getEndsWith() != null && stringSortCriteria.getEndsWith().isEmpty()) {
+            errors.add(properties.getErrorInvalidFilterString().formatted("endsWith"));
         }
         if (!errors.isEmpty())
             throw new InvalidRequestException(errors);

@@ -35,4 +35,6 @@ public class ValidationProperties {
     String errorDateIsAfterCurrentDate;
     @NotNull(message = "Validation property \"errorBeforeIsMoreThanAfterDate\" cannot be null: check application.yml")
     String errorBeforeIsMoreThanAfterDate;
+    @NotNull(message = "Validation property \"errorInvalidFilterString\" cannot be null: check application.yml")
+    String errorInvalidFilterString;
 }

@@ -30,3 +30,4 @@ validation:
   errorInvalidEmail:  "Invalid subscription email: %s"
   errorDateIsAfterCurrentDate: "Invalid date: %s, the date is after the current date"
   errorBeforeIsMoreThanAfterDate: "Before date: %s is after than after date: %s"
+  errorInvalidFilterString: "Filter string '%s' couldn't be empty"

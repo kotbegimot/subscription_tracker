@@ -1,6 +1,7 @@
 package com.example.subscription.controller;
 
 import com.example.subscription.model.DateSortCriteria;
+import com.example.subscription.model.StringSortCriteria;
 import com.example.subscription.model.SubscriptionModel;
 import com.example.subscription.service.SubscriptionsService;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +26,9 @@ public class SubscriptionController {
      * @return - list of subscriptions objects in JSON format
      */
     @GetMapping()
-    public List<SubscriptionModel> getSubscriptions(DateSortCriteria dateSortCriteria) {
-        return service.getSubscriptions(dateSortCriteria);
+    public List<SubscriptionModel> getSubscriptions(DateSortCriteria dateSortCriteria,
+                                                    StringSortCriteria stringSortCriteria) {
+        return service.getSubscriptions(dateSortCriteria, stringSortCriteria);
     }
 
     /**
